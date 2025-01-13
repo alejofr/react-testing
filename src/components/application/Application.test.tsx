@@ -4,10 +4,10 @@ import { render, screen } from '@testing-library/react';
 import { Application } from './Application';
 
 describe('Application', () => {
-    test('Render Correctly', () => {
-        render(<Application />);
 
-        /** getByRole */
+    /** getByRole */
+    test('Render Correctly getByRole', () => {
+        render(<Application />);
 
         const pageHeading = screen.getByRole('heading', {
             level: 1,
@@ -37,5 +37,18 @@ describe('Application', () => {
 
         const submitElement = screen.getByRole('button');
         expect(submitElement).toBeInTheDocument();
-    })
+    });
+
+    /** getByLabelText */
+    test('Render Correctly getByLabelText', () => {
+        render(<Application />);
+
+        const nameElement2 = screen.getByLabelText('Name', { selector: 'input' })
+        expect(nameElement2).toBeInTheDocument()
+
+        const termsElement2 = screen.getByLabelText(
+        'I agree to the terms and conditions'
+        )
+        expect(termsElement2).toBeInTheDocument()
+    });
 })

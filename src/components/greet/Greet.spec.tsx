@@ -1,16 +1,16 @@
 import React from 'react';
-import { expect,  test, describe } from 'vitest'
+import { expect,  it, describe } from 'vitest'
 import { render, screen } from '@testing-library/react';
 import { Greet } from './Greet';
 
 describe('Greet', () => {
-    test('Render Greet correctly', () => {
+    it('Render Greet correctly', () => {
         render(<Greet /> );
         const textElement = screen.getByText("Hello");
         expect(textElement).toBeInTheDocument();
     });
     
-    test('Render with name', () => {
+    it('Render with name', () => {
         const name = 'Abraham';
         render(<Greet name={name} />);
         const textElement = screen.getByText(`Hello ${name}`);

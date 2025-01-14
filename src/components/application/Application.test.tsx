@@ -51,4 +51,11 @@ describe('Application', () => {
         )
         expect(termsElement2).toBeInTheDocument()
     });
+
+    /** getByPlaceholderText */
+    test('Render Correctly getByPlaceholderText', () => {
+        render(<Application />);
+        const nameElement3 = screen.getByPlaceholderText('Fullname')
+        expect(nameElement3).toBeInTheDocument()
+    });
 })

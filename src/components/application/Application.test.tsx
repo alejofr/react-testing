@@ -72,4 +72,11 @@ describe('Application', () => {
         const nameElement4 = screen.getByDisplayValue('Vishwas')
         expect(nameElement4).toBeInTheDocument()
     });
+
+    /** getByAltText */
+    test('Render Correctly getByAltTex', () => {
+        render(<Application />);
+        const imageElement = screen.getByAltText('a person with a laptop')
+        expect(imageElement).toBeInTheDocument()
+    });
 })

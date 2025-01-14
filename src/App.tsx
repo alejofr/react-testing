@@ -1,11 +1,12 @@
 import './App.css'
-import { Application } from './components/application'
+import { Skills, Application } from './components'
 
 function App() {
 
   return (
     <div className='app'>
       <Application />
+      <Skills skills={['HTML', 'CSS']} />
     </div>
   )
 }

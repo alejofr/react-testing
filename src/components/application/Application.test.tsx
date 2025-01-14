@@ -58,4 +58,11 @@ describe('Application', () => {
         const nameElement3 = screen.getByPlaceholderText('Fullname')
         expect(nameElement3).toBeInTheDocument()
     });
+
+    /** getByText */
+    test('Render Correctly getByText', () => {
+        render(<Application />);
+        const paragraphElement = screen.getByText('All fields are mandatory')
+        expect(paragraphElement).toBeInTheDocument()
+    });
 })
